@@ -23,6 +23,7 @@ public class InstOnTouch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("ici");
         if (m_prefabToInstantiate == null)
             return;
 
@@ -40,6 +41,7 @@ public class InstOnTouch : MonoBehaviour
         }
         if (!instantiate)
             return;
+        Debug.Log("la");
 
         Ray r = m_meCamera.ScreenPointToRay(pos);
         RaycastHit rch;
@@ -49,7 +51,7 @@ public class InstOnTouch : MonoBehaviour
             if (prefabInstantiated)
             {
                 prefabInstantiated.transform.position = rch.point;
-                prefabInstantiated.transform.parent = m_ARorigin.transform;
+                prefabInstantiated.transform.parent = m_ARorigin.transform; // position relative par rapport a la camera
                 Debug.Log("Prefab instantiated on plane");
             }
         }
