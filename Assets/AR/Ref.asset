@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
-  m_Name: ReferenceImageLibrary
+  m_Name: Ref
   m_EditorClassIdentifier: 
-  m_GuidLow: 5703511809238976318
-  m_GuidHigh: 18173144176640470160
+  m_GuidLow: 5556082853257356587
+  m_GuidHigh: 16448709636229142975
   m_Images:
   - m_SerializedGuid:
-      m_GuidLow: 4869247415346980341
-      m_GuidHigh: 11404867861570187439
+      m_GuidLow: 5412186221215717943
+      m_GuidHigh: 6556762039781606052
     m_SerializedTextureGuid:
       m_GuidLow: 8810250587175364743
       m_GuidHigh: 1961147195949351241
@@ -26,11 +26,11 @@ MonoBehaviour:
     m_Name: MARKER_1
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
-      m_GuidLow: 4724855207428807334
-      m_GuidHigh: 11135006779757148091
+      m_GuidLow: 5193652747560351654
+      m_GuidHigh: 12646049643404919191
     m_SerializedTextureGuid:
-      m_GuidLow: 14034541167871273240
-      m_GuidHigh: 10058979240029739275
+      m_GuidLow: 5275059150081801928
+      m_GuidHigh: 741191726901031562
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: MARKER_2

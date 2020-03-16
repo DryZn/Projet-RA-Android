@@ -23,7 +23,6 @@ public class InstOnTouch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("ici");
         if (m_prefabToInstantiate == null)
             return;
 
@@ -41,7 +40,6 @@ public class InstOnTouch : MonoBehaviour
         }
         if (!instantiate)
             return;
-        Debug.Log("la");
 
         Ray r = m_meCamera.ScreenPointToRay(pos);
         RaycastHit rch;
