@@ -5,7 +5,9 @@ The purpose here is to use Unity's integrated tools to implement plane detection
 Compile and launch the application from Unity (Ctrl-B).  
 Build directory is "build/".
 # Presentation
-The application take for reference this picture:  
-<img src="https://github.com/DryZn/Projet-RA-Android/Assets/amusedART/Fantasy Bee/Texture/CustomHive.png" width="40%">  
+The application take for reference this picture:
+<br/><br/>
+<img src="https://raw.githubusercontent.com/DryZn/Projet-RA-Android/master/Assets/amusedART/Fantasy%20Bee/Texture/CustomHive.png" width="40%">
+<br/><br/>
 Targeting this image makes a beer appear.  
 If the user touch the bee, she will attack. Having his sting lost, she die.
