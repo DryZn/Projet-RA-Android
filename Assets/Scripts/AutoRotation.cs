@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AutoRotation : MonoBehaviour
 {
-
     public float m_rotationSpeed = 10.0f;   // rotation speed in degrees/second
     private float m_angle = 0.0f;           // current orientation angle (in degrees) around Y axis
 

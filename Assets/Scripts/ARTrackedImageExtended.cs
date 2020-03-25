@@ -7,7 +7,7 @@ public class ARTrackedImageExtended : ARTrackedImage
 {
 
     string m_prefabName = "MARKER_1"; // tester avec ""
-    GameObject m_marker= null;
+    GameObject m_marker = null;
     GameObject m_markerInstantiated = null;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class ARTrackedImageExtended : ARTrackedImage
     {
         if (m_markerInstantiated == null)
         {
-            m_marker = Resources.Load<GameObject>(m_prefabName);
+            //m_marker = Resources.Load<GameObject>(m_prefabName);
             m_markerInstantiated = Instantiate(m_marker);
             //Application.OpenURL("https://www.google.fr/");
             m_markerInstantiated.transform.parent = this.transform;
