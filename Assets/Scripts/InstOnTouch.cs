@@ -50,12 +50,7 @@ public class InstOnTouch : MonoBehaviour
             {
                 prefabInstantiated.transform.position = rch.point;
                 prefabInstantiated.transform.parent = m_ARorigin.transform; // position relative par rapport a la camera
-                Debug.Log("Prefab instantiated on plane");
             }
-        }
-        else
-        {
-            Debug.LogError("Prefab cannot be instantiated, no plane detected");
         }
     }
 }

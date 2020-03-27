@@ -14,3 +14,4 @@ The application take for reference this picture:
 <br/><br/>
 Targeting the honeycomb image makes appear a bee flying in the area right in front.  
 The bee will go attack the user if he touch her. Having his sting lost, she dies.  
+Touching a detected horizontal plane makes a flower appear.

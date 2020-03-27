@@ -9,15 +9,16 @@ public class TouchObject : MonoBehaviour
 
     Camera m_meCamera = null;
     ARSessionOrigin m_ARorigin = null;
-    public LayerMask m_layerMask = 0x100;
+    public string LayerName = null;
     public GameObject m_prefabToInstantiate = null;
+    private LayerMask m_layerMask;
 
     // Start is called before the first frame update
     void Start()
     {
         m_meCamera = GetComponent<Camera>();
         m_ARorigin = FindObjectOfType<ARSessionOrigin>();
-
+        m_layerMask = LayerMask.GetMask("Bees");
     }
 
     // Update is called once per frame

@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1218759206964716, guid: 26fa8b8f81b5a844e8de74b436f851c8, type: 3}
       propertyPath: m_Name
-      value: PlantPot_26
+      value: PlantPot_26 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218759206964716, guid: 26fa8b8f81b5a844e8de74b436f851c8, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4603425575160100, guid: 26fa8b8f81b5a844e8de74b436f851c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,6 +59,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4603425575160100, guid: 26fa8b8f81b5a844e8de74b436f851c8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603425575160100, guid: 26fa8b8f81b5a844e8de74b436f851c8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603425575160100, guid: 26fa8b8f81b5a844e8de74b436f851c8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26fa8b8f81b5a844e8de74b436f851c8, type: 3}
 --- !u!4 &8030172614781933016 stripped
@@ -73,6 +89,10 @@ PrefabInstance:
     - target: {fileID: 1369474507023868, guid: a619dac9e685beb4695e5027bcd0d117, type: 3}
       propertyPath: m_Name
       value: Dahlia_Type02_Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369474507023868, guid: a619dac9e685beb4695e5027bcd0d117, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4344353299394750, guid: a619dac9e685beb4695e5027bcd0d117, type: 3}
       propertyPath: m_LocalPosition.x

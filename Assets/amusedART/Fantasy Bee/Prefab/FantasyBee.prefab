@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4803327195904796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,8 +40,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4549644435828676}
   - component: {fileID: 5537210545155607397}
-  - component: {fileID: 3529839922629798805}
-  m_Layer: 0
+  - component: {fileID: -945740445774620634}
+  - component: {fileID: 4774501234254270847}
+  - component: {fileID: -4847435679288385399}
+  m_Layer: 9
   m_Name: FantasyBee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 1046869630431942}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4036020211043170}
   - {fileID: 4983713028428976}
@@ -73,7 +75,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046869630431942}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 4371e4ea3efaabd419cee1125d54c6e0, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 02332556bea4c4842b56d35cf2b338bc, type: 3}
   m_Controller: {fileID: 9100000, guid: a24c0a87378080346a13442aac66e98d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -83,7 +85,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3529839922629798805
+--- !u!114 &-945740445774620634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,9 +97,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abc2c86e6f7bc94eb3801cd33bc9e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rotationSpeed: 10
-  def_z: 2
-  speed: 0.5
+  def_z: 0.3
+  speed: 0.3
+--- !u!114 &4774501234254270847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046869630431942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d06ad85f2d9f794784f3fe9c7c1ca12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  anim2: {fileID: 9100000, guid: edbb98ac18bdf29488d2ba9dac4e2aee, type: 2}
+--- !u!64 &-4847435679288385399
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046869630431942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 02332556bea4c4842b56d35cf2b338bc, type: 3}
 --- !u!1 &1123151019833848
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4001871042164966}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4036020211043170}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4148708905150874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone011(mirrored)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4904305849021964}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4304134894598008}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4352009052622362}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4224851340826148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4019297026939376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4832634750637700}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4983713028428976}
   - component: {fileID: 137177222824363494}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fantasy Bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4154134294551940}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4893088070262082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4748755150860974}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4642787788074294}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4806598413872468}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4843490176913306}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone013(mirrored)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

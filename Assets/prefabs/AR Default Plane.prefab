@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6600317482337972900}
   - component: {fileID: 3141616221739357539}
   - component: {fileID: 1595949070670948427}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AR Default Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

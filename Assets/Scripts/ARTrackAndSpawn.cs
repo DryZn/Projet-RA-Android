@@ -14,7 +14,6 @@ public class ARTrackAndSpawn : ARTrackedImage
         if (m_markerInstantiated == null)
         {
             m_markerInstantiated = Instantiate(m_prefab);
-            //Application.OpenURL("https://www.google.fr/");
             m_markerInstantiated.transform.parent = this.transform;
             Vector3 vect = Vector3.zero;
             vect.z = def_z;

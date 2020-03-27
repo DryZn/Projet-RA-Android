@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script permettant a l'objet de se deplacer et adaptant sa rotation selon sa direction
 public class Patrol : MonoBehaviour
 {
-    public float m_rotationSpeed = 10.0f;   // rotation speed in degrees/second
-    public float def_z = 0.0f;
-    public float speed = 0.0f;
+    public float def_z = 1.5f;
+    public float speed = 0.3f;
     private float decal = 0;
     private float sense = 1;
     private float angle = 270.0f;
 
-    // Update is called once per frame
     void Update()
     {
         // Creation d'un nouveau vecteur qui reprend les coordoonees du prefab
@@ -29,11 +28,5 @@ public class Patrol : MonoBehaviour
         decal += Time.deltaTime * speed * sense;
         vect.x = decal;
         this.transform.localPosition = vect;
-
-
-        // calculate the new angle according to the time elapsed since last frame
-        //m_angle += m_rotationSpeed * Time.deltaTime;
-        //Random.Range(0.0f, 360.0f);
-
     }
 }
