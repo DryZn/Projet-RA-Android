@@ -19,7 +19,6 @@ public class ARTrackAndSpawn : ARTrackedImage
             vect.z = def_z;
             m_markerInstantiated.transform.localPosition = vect;
             m_markerInstantiated.transform.localRotation = Quaternion.identity;
-            // do not change scale
         }
 
     }
@@ -38,5 +37,4 @@ public class ARTrackAndSpawn : ARTrackedImage
         //m_markerInstantiated.SetActive(this.trackingState == UnityEngine.XR.ARSubsystems.TrackingState.Tracking);
 
     }
-
 }

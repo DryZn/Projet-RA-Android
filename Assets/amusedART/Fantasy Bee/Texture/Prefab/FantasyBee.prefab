@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 5537210545155607397}
   - component: {fileID: -945740445774620634}
   - component: {fileID: 4774501234254270847}
-  - component: {fileID: -4847435679288385399}
+  - component: {fileID: 6097435910543326696}
   m_Layer: 9
   m_Name: FantasyBee
   m_TagString: Untagged
@@ -57,15 +57,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046869630431942}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_Children:
   - {fileID: 4036020211043170}
   - {fileID: 4983713028428976}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5537210545155607397
 Animator:
   serializedVersion: 3
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abc2c86e6f7bc94eb3801cd33bc9e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  def_z: 0.3
-  speed: 0.3
+  def_z: 0.1
+  speed: 0.15
 --- !u!114 &4774501234254270847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,10 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d06ad85f2d9f794784f3fe9c7c1ca12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  anim2: {fileID: 9100000, guid: edbb98ac18bdf29488d2ba9dac4e2aee, type: 2}
---- !u!64 &-4847435679288385399
-MeshCollider:
+  animHit: {fileID: 9100000, guid: edbb98ac18bdf29488d2ba9dac4e2aee, type: 2}
+  animReaction: {fileID: 9100000, guid: a06f9932b5178d24c85ed4a5456cfc27, type: 2}
+  speed: 0.1
+  rotaSpeed: 4
+--- !u!65 &6097435910543326696
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,10 +125,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 02332556bea4c4842b56d35cf2b338bc, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1123151019833848
 GameObject:
   m_ObjectHideFlags: 0

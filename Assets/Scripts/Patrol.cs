@@ -7,9 +7,14 @@ public class Patrol : MonoBehaviour
 {
     public float def_z = 1.5f;
     public float speed = 0.3f;
-    private float decal = 0;
+    private float decalX = 0;
     private float sense = 1;
-    private float angle = 270.0f;
+    private float rotaY;
+
+    private void Start()
+    {
+        rotaY = 90;
+    }
 
     void Update()
     {
@@ -17,16 +22,16 @@ public class Patrol : MonoBehaviour
         Vector3 vect = Vector3.zero;
         // coord de l'endroit d'appartiion de l'abeille
         vect.z = def_z;
-        if (decal > 2)
+        if (decalX > 0.6)
             sense *= -1;
-        else if (decal < -2)
+        else if (decalX < -0.6)
             sense *= -1;
         float inc = 0.0f;
-        if (sense == 1)
+        if (sense == -1)
             inc += 180;
-        this.transform.localRotation = Quaternion.Euler(0.0f, angle + inc, 0.0f);
-        decal += Time.deltaTime * speed * sense;
-        vect.x = decal;
-        this.transform.localPosition = vect;
+        transform.localRotation = Quaternion.Euler(0.0f, rotaY + inc, 0.0f);
+        decalX += Time.deltaTime * speed * sense;
+        vect.x = decalX;
+        transform.localPosition = vect;
     }
 }
