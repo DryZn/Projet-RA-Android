@@ -6,16 +6,12 @@ public class InteractHit : MonoBehaviour
 {
     public RuntimeAnimatorController animHit;
     public RuntimeAnimatorController animReaction;
-    public float speed = 0.1f;
+    public RuntimeAnimatorController animMove;
+    public float moveSpeed = 0.4f;
     public float rotaSpeed = 0.15f;
-    private float decalX = 0;
-    private float decalY = 0;
-    private float decalZ = 0;
-    private float sense = 1;
-    private float rotaY;
     private Animator anim = null;
     private int hitsRem = 3;
-    private GameObject camera;
+    private Transform camTransform;
 
     // Lorsque l'on appuie sur l'abeille elle arrete de se deplacer et fait l'animation "TouchedBee"
     private void OnMouseDown()
@@ -23,17 +19,34 @@ public class InteractHit : MonoBehaviour
         if (anim is null)
         {
             Destroy(gameObject.GetComponent<Patrol>());
-            rotaY = transform.localRotation.y;
             anim = gameObject.GetComponent<Animator>();
             anim.runtimeAnimatorController = animHit;
-            camera = GameObject.FindGameObjectWithTag("MainCamera");
+            camTransform = Camera.main.transform;
         }
         // reset l'anim
-        else if (hitsRem > 0)
+        else if (hitsRem > 1)
             anim.Play("GetDamage");
         else
-            anim.runtimeAnimatorController = animReaction;
+        {
+            // au bout de trois contacts elle rejoint l'utilisateur pour l'attaquer
+            anim.runtimeAnimatorController = animMove;
+            rotaSpeed *= 3;
+        }
         hitsRem -= 1;
+    }
+
+    // retourne la nouvelle position ou rotation pres de celle ciblee
+    float changeToPos(float initCoord, float targetCoord, float marginArea, float changespeed)
+    {
+        int sense = 1;
+        if (initCoord > (targetCoord - marginArea))
+        {
+            // si l'objet est deja proche de la position cible, il ne bouge pas
+            if ((targetCoord + marginArea) > initCoord)
+                return initCoord;
+            sense = -1;
+        }
+        return initCoord + Time.deltaTime * changespeed * sense;
     }
 
     // lorsque l'on a touche l'abeille trop de fois elle attaque
@@ -41,34 +54,30 @@ public class InteractHit : MonoBehaviour
     {
         if (anim != null)
         {
+            // l'abeille se tourne face a l'utilisateur
+            float rotaY = changeToPos(transform.localRotation.eulerAngles.y%360, (camTransform.localRotation.eulerAngles.y + 180)%360, 0.01f, rotaSpeed);
+            transform.rotation = Quaternion.Euler(0.0f, rotaY, 0.0f);
             //if ((hitsRem == 0) && (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0)))
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Wait"))
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Death"))
                 Destroy(this);
 
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            if (hitsRem < 1)
             {
-                // l'abeille se tourne face a l'utilisateur
-                rotaY = (GameObject.FindGameObjectWithTag("MainCamera").transform.localRotation.y + 180) - Time.deltaTime * rotaSpeed;
-                transform.rotation = Quaternion.Euler(0.0f, rotaY, 0.0f);
-                Debug.Log("test");
-                Debug.Log(camera.transform.localRotation.y);
                 // temporaire
                 /*if ((Time.time - spawnTime2) > 8)
                     anim.runtimeAnimatorController = animReaction;*/
                 // Creation d'un nouveau vecteur qui reprend les coordoonees du prefab
                 Vector3 vect = Vector3.zero;
-                //Vector3 vect = transform.localPosition;
                 // l'abeille rejoint l'utilisateur pour le piquer
-                if (transform.localPosition.x > 0.1)
-                    //transform.right = Time.deltaTime * speed;
-                    vect.x = transform.localPosition.x - Time.deltaTime * speed;
-                if (transform.localPosition.y > 0.1)
-                    vect.y = transform.localPosition.y - Time.deltaTime * speed;
-                if (transform.localPosition.z > 0.1)
-                    vect.z = transform.localPosition.z - Time.deltaTime * speed;
-                decalX += Time.deltaTime * speed * sense;
-                vect.x = decalX;
-                //transform.localPosition = vect;
+                vect.x = changeToPos(transform.localPosition.x, camTransform.localPosition.x, 0.18f, moveSpeed);
+                vect.y = changeToPos(transform.localPosition.y, camTransform.localPosition.y, 0.05f, moveSpeed);
+                vect.z = changeToPos(transform.localPosition.z, camTransform.localPosition.z, 0.18f, moveSpeed);
+                if ((vect == transform.localPosition) && (anim.runtimeAnimatorController != animReaction))
+                {
+                    anim.runtimeAnimatorController = animReaction;
+                    moveSpeed *= 3;
+                }
+                transform.localPosition = vect;
             }
         }
     }
