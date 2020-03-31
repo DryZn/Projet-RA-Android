@@ -13,5 +13,5 @@ The application take for reference this picture:
 <img src="https://raw.githubusercontent.com/DryZn/Projet-RA-Android/master/Assets/amusedART/Fantasy%20Bee/Texture/CustomHive.png" width="30%">
 <br/><br/>
 Targeting the honeycomb image makes appear a bee flying in the area right in front.  
-The bee will go attack the user if he touch her three times. Having his sting lost, she dies.  
+The bee will go attack the user if he touch her three times. Having his sting lost, she dies and falls until touch a surface or a flower.  
 Touching a detected horizontal plane makes a flower appear.

@@ -114,6 +114,9 @@ MonoBehaviour:
   animHit: {fileID: 9100000, guid: edbb98ac18bdf29488d2ba9dac4e2aee, type: 2}
   animReaction: {fileID: 9100000, guid: a06f9932b5178d24c85ed4a5456cfc27, type: 2}
   animMove: {fileID: 9100000, guid: a24c0a87378080346a13442aac66e98d, type: 2}
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 257
   moveSpeed: 0.4
   rotaSpeed: 50
 --- !u!65 &6097435910543326696

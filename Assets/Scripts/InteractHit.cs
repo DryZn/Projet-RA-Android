@@ -7,6 +7,7 @@ public class InteractHit : MonoBehaviour
     public RuntimeAnimatorController animHit;
     public RuntimeAnimatorController animReaction;
     public RuntimeAnimatorController animMove;
+    public LayerMask m_layerMask = 0x100;
     public float moveSpeed = 0.4f;
     public float rotaSpeed = 0.15f;
     private Animator anim = null;
@@ -55,17 +56,19 @@ public class InteractHit : MonoBehaviour
         if (anim != null)
         {
             // l'abeille se tourne face a l'utilisateur
-            float rotaY = changeToPos(transform.localRotation.eulerAngles.y%360, (camTransform.localRotation.eulerAngles.y + 180)%360, 0.01f, rotaSpeed);
+            float rotaY = changeToPos(transform.localRotation.eulerAngles.y%360, (camTransform.localRotation.eulerAngles.y + 180)%360, 0.05f, rotaSpeed);
             transform.rotation = Quaternion.Euler(0.0f, rotaY, 0.0f);
-            //if ((hitsRem == 0) && (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0)))
+
+            // elle tombe a sa mort en instantiant un nouveau composant et detruisant celui-ci
             if (anim.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+            {
+                Fall newBehaviour = gameObject.AddComponent<Fall>();
+                newBehaviour.m_layerMask = m_layerMask;
                 Destroy(this);
+            }
 
             if (hitsRem < 1)
             {
-                // temporaire
-                /*if ((Time.time - spawnTime2) > 8)
-                    anim.runtimeAnimatorController = animReaction;*/
                 // Creation d'un nouveau vecteur qui reprend les coordoonees du prefab
                 Vector3 vect = Vector3.zero;
                 // l'abeille rejoint l'utilisateur pour le piquer
