@@ -26,9 +26,6 @@ public class Noise : MonoBehaviour
 
     void Start()
     {
-        Permission.RequestUserPermission(Permission.Microphone);
-        dialog = new GameObject();
-        /*
 #if PLATFORM_ANDROID
         if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
         {
@@ -36,7 +33,7 @@ public class Noise : MonoBehaviour
             dialog = new GameObject();
         }
 #endif
-*/
+
         _samples = new float[QSamples];
         _spectrum = new float[QSamples];
         _fSample = AudioSettings.outputSampleRate;

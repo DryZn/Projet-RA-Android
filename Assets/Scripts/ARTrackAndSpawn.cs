@@ -8,6 +8,12 @@ public class ARTrackAndSpawn : ARTrackedImage
     public GameObject m_prefab = null;
     GameObject m_markerInstantiated = null;
     public float def_z = 1.5f;
+    Vector3 vectSpawn;
+
+    private void Start()
+    {
+        vectSpawn = Vector3.zero;
+    }
 
     void UpdateMarker()
     {
@@ -15,11 +21,13 @@ public class ARTrackAndSpawn : ARTrackedImage
         if (m_markerInstantiated == null)
         {
             m_markerInstantiated = Instantiate(m_prefab);
-            m_markerInstantiated.transform.parent = this.transform;
-            Vector3 vect = Vector3.zero;
-            // transform.position
-            vect.z += def_z;
-            m_markerInstantiated.transform.localPosition = vect;
+            m_markerInstantiated.transform.parent = transform;
+            if (vectSpawn == Vector3.zero)
+            {
+                vectSpawn = GameObject.FindGameObjectWithTag("MainCamera").transform.localPosition;
+                vectSpawn.z += def_z;
+            }
+            m_markerInstantiated.transform.localPosition = vectSpawn;
             m_markerInstantiated.transform.localRotation = Quaternion.identity;
         }
 
