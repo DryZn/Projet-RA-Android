@@ -5,7 +5,6 @@ using UnityEngine;
 // Script permettant a l'objet de se deplacer et adaptant sa rotation selon sa direction
 public class Patrol : MonoBehaviour
 {
-    public float def_z = 1.5f;
     public float speed = 0.3f;
     private float decalX = 0;
     private float sense = 1;
@@ -21,7 +20,7 @@ public class Patrol : MonoBehaviour
         // Creation d'un nouveau vecteur qui reprend les coordoonees du prefab
         Vector3 vect = Vector3.zero;
         // coord de l'endroit d'appartiion de l'abeille
-        vect.z = def_z;
+        vect.z = transform.localPosition.z;
         if (decalX > 0.6)
             sense *= -1;
         else if (decalX < -0.6)
